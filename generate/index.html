@@ -1,0 +1,21 @@
+<body style="font-family: monospace">
+<p>Leave values blank to use default values</p>
+<label for="site">Site:&nbsp;&nbsp;</label>
+<input name="site" id="site" type="text">
+<br>
+<label for="video">Video:&nbsp;</label>
+<input name="video" id="video" type="text">
+<p>Link: <a id="link" href=""></span></p>
+<script>
+document.addEventListener('keyup', function() {
+  let link  = location.origin + '/' + location.pathname.split('/')[1];
+  let site  = document.getElementById('site').value;
+  let video = document.getElementById('video').value;
+  if (site.length  > 0 || video.length > 0) link += '?';
+  if (site.length  > 0) link += 'site=' + site;
+  if (video.length > 0) link += ((site.length  > 0) ? '&' : '') + 'video=' + site;
+  document.getElementById('link').href      = link;
+  document.getElementById('link').innerText = link;
+})
+</script>
+</body>
