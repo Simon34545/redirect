@@ -29,6 +29,7 @@ document.getElementById('link').href = '#RICKROLLEDHAHA' + Date.now();
 let vid = document.createElement('video');
 vid.id = 'rickroll';
 vid.style = 'position: absolute; top: 0; left: 0; width: 100%; height: 100vh';
+vid.loop = true;
 vid.src = params.video;
 
 function playVid() {
